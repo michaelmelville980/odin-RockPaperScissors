@@ -36,7 +36,48 @@ console.log(getHumanChoice());
 let humanScore = 0;
 let computerScore = 0;
 
-//playound function
-const playound = function(humanChoice, computerChoice){
+// playRound function
+const playRound = function(humanChoice, computerChoice){
+    switch (humanChoice + "-" + computerChoice){
+        case "rock-scissors":
+            humanScore++;
+            console.log("You win! Rock beats Scissors");
+            break;
 
+        case "rock-paper":
+            computerScore++;
+            console.log("You lose! Paper beats Rock");
+            break;
+
+        case "paper-rock":
+            humanScore++;
+            console.log("You win! Paper beats Rock");
+            break;
+
+        case "paper-scissors":
+            computerScore++;
+            console.log("You lose! Scissors beats Paper");
+            break;
+
+        case "scissors-rock":
+            computerScore++;
+            console.log("You lose! Rock beats Scissors");
+            break;
+
+        case "scissors-paper":
+            humanScore++;
+            console.log("You win! Scissors beats Paper");
+            break;
+        
+        default:
+            console.log("You tie!");
+            break;
+    }
 }
+
+// Playing the Round
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
